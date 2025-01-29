@@ -5,12 +5,20 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 
+// const pool = mysql.createPool({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+//     port: process.env.DB_PORT
+// });
+
 const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    host: 'sql5.freesqldatabase.com',
+    user: 'sql5760030',
+    password: '4il687u6gw',
+    database: 'sql5760030',
+    port: '3306'
 });
 
 export default pool;

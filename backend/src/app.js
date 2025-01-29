@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // route to get product from api
-app.get('/api/products', async (req, res) => {
+app.get('sql5.freesqldatabase.com', async (req, res) => {
     try {
         const products = await displayProducts(); // Fetch products
         res.send(products); // Send the products as a obj response

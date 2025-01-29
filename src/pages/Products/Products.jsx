@@ -4,7 +4,7 @@ export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://e-commerce-v2-up2k.vercel.app/api/products")
+    fetch("https://e-commercev2.onrender.com/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

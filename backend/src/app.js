@@ -9,10 +9,10 @@ dotenv.config();
 //Create backend server w/ express
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 // Middleware for parsing JSON request bodies
-// app.use(express.json());
+app.use(express.json());
 
 // route to get product from api
 app.get("/api/products", async (req, res) => {

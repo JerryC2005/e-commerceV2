@@ -22,7 +22,7 @@ export default function Products() {
           {products.map((product, index) => {
             return (
               <div className="product-card" key={index}>
-                <img src={product.img} alt={product.name} />
+                <img src={product.img} alt={product.name}/>
                 <section className="product-section">
                   <h3 className="name">{product.name}</h3>
                   <p className="description">{product.description}</p>

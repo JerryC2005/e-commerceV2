@@ -1,20 +1,42 @@
 import { useEffect, useState } from "react";
 
 export default function Products() {
-    const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    const [productType, setProductType] = useState("");
+    const [products, setProducts] = useState([]); // Default products
+    const [filteredProducts, setFilteredProducts] = useState([]); // Default filtered products
+    const [productType, setProductType] = useState(""); // Default product type
     const [sortOrder, setSortOrder] = useState(""); // Default sort order
   
 
   useEffect(() => {
-    fetch("https://e-commercev2.onrender.com/api/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-        console.log(data);
-        setFilteredProducts(data);
-      });
+    // Function to fetch products from the API
+    async function fetchProducts(){
+    try {
+      // Fetch data from the API
+      const response = await fetch("https://e-commercev2.onrender.com/api/products");
+
+      // Check if the response status is not OK (e.g., 404, 500)
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Update state with fetched products
+      setProducts(data);
+      setFilteredProducts(data);
+
+      // Log data for debugging purposes
+      console.log(data);
+    } catch (error) {
+      // Handle errors (e.g., network issues, API failure)
+      console.error("Failed to fetch products:", error);
+    }
+  };
+
+  // Call the fetch function when the component mounts
+  fetchProducts();
+
   }, []);
 
   useEffect(() => {
@@ -23,7 +45,6 @@ export default function Products() {
       return productType ? product.product_type === productType : true; // Use 'product_type' for filtering
     });
 
-    // Sort filtered products based on selected sort order
     // Sort filtered products based on selected sort order
     const sorted = filtered.sort((a, b) => {
       if (sortOrder === "asc") {

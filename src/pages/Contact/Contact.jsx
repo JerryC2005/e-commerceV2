@@ -78,6 +78,7 @@ export default function Contact() {
             })
             // clears errors
             setErrors({})
+            alert('Form submitted successfully')
         }
 
     }

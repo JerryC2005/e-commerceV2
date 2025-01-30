@@ -1,7 +1,5 @@
-// const mysql = require('mysql2/promise');
 import mysql from 'mysql2/promise'
 import dotenv from 'dotenv'
-// const dotenv = require('dotenv')
 dotenv.config();
 
 
@@ -12,13 +10,5 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT
 });
-
-// const pool = mysql.createPool({
-//     host: 'sql5.freesqldatabase.com',
-//     user: 'sql5760030',
-//     password: '4il687u6gw',
-//     database: 'sql5760030',
-//     port: '3306'
-// });
 
 export default pool;

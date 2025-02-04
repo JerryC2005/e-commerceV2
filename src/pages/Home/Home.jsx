@@ -46,13 +46,13 @@ export function SlideShow({ slides }) {
         zIndex: 1,
         cursor: 'pointer',
     }
-
+    // left arrow component
     function goToPrevious() {
         const isFirstSlide = currentIndex === 0
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
         setCurrentIndex(newIndex);
     }
-
+    // right arrow component
     function goToNext() {
         const isLastSlide = currentIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : currentIndex + 1
@@ -72,7 +72,7 @@ export function SlideShow({ slides }) {
     )
 }
 
-
+//main component ib fil
 export default function Home() {
 
     const containerStyles = {

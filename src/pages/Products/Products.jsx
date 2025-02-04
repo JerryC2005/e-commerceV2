@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ProductCard from "../../components/ProductCard/ProducCard";
 
 export default function Products() {
     const [products, setProducts] = useState([]); // Default products
@@ -98,14 +99,8 @@ export default function Products() {
         <section className="product-grid">
         {filteredProducts.map((product, index) => {
             return (
-              <div className="product-card" key={index}>
-                <img src={product.img} alt={product.name} />
-                <section className="product-section">
-                  <h3 className="name">{product.name}</h3>
-                  <p className="description">{product.description}</p>
-                  <p className="price">${product.price}</p>
-                </section>
-              </div>
+              // product card component
+              <ProductCard product={product} key={index} />
             );
           })}
         </section>

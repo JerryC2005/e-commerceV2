@@ -13,7 +13,7 @@ export default function Products() {
     async function fetchProducts(){
     try {
       // Fetch data from the API
-      const response = await fetch("https://e-commercev2.onrender.com/api/products");
+      const response = await fetch("https://e-commercev2.onrender.com/api/products"); 
 
       // Check if the response status is not OK (e.g., 404, 500)
       if (!response.ok) {
